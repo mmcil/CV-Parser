@@ -10,19 +10,17 @@ app = Flask(__name__)
 
 @app.route("/pdf-upload", methods=['POST'])
 def file_upload():
-    newFile = open("tmp.pdf", "wb")
-    newFile.write(request.data)
-    newFile.close()
+    new_file = open("tmp.pdf", "wb")
+    new_file.write(request.data)
+    new_file.close()
     processed_json = ResumeParser("tmp.pdf").get_extracted_data()
     if not path.exists('db'):
         makedirs('db')
-    myId = str(uuid.uuid4())
-    resultJson = open ("db/" + myId + ".json", "w")
-    resultJson.write(json.dumps(processed_json, indent=4))
-    resultJson.close()
-    return myId
-
-
+    db_item_id = str(uuid.uuid4())
+    result_json = open ("db/" + db_item_id + ".json", "w")
+    result_json.write(json.dumps(processed_json, indent=4))
+    result_json.close()
+    return db_item_id
 
 
 app.run()
