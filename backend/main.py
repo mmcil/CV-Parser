@@ -7,13 +7,10 @@ import json
 
 app = Flask(__name__)
 
-
 @app.route("/pdf-upload", methods=['POST'])
 def file_upload():
-    new_file = open("tmp.pdf", "wb")
-    new_file.write(request.data)
-    new_file.close()
-
+    file = request.files['file']
+    file.save("tmp.pdf")
     processed_json = ResumeParser("tmp.pdf").get_extracted_data()
     if not path.exists('db'):
         makedirs('db')
@@ -25,10 +22,6 @@ def file_upload():
     response = jsonify({'some': 'data'})
     response.headers.add('Access-Control-Allow-Origin', '*')
 
-    print(request.data)
     return response
-
-    #return db_item_id
-
 
 app.run()
