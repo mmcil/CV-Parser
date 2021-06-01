@@ -13,6 +13,7 @@ def file_upload():
     new_file = open("tmp.pdf", "wb")
     new_file.write(request.data)
     new_file.close()
+
     processed_json = ResumeParser("tmp.pdf").get_extracted_data()
     if not path.exists('db'):
         makedirs('db')
@@ -20,7 +21,14 @@ def file_upload():
     result_json = open ("db/" + db_item_id + ".json", "w")
     result_json.write(json.dumps(processed_json, indent=4))
     result_json.close()
-    return db_item_id
+
+    response = jsonify({'some': 'data'})
+    response.headers.add('Access-Control-Allow-Origin', '*')
+
+    print(request.data)
+    return response
+
+    #return db_item_id
 
 
 app.run()
