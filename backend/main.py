@@ -25,6 +25,7 @@ def file_upload_endpoint():
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
+
 @app.route("/search", methods=['POST'])
 def search_endpoint():
     result = perform_search(request.json)
@@ -32,13 +33,18 @@ def search_endpoint():
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
+
+def string_contains(big, little):
+    return little.lower() in big.lower()
+
+
 def contains_property(document, criteria_key, criteria_value):
     if isinstance(document, str):
-        return criteria_value in document
+        return string_contains(document, criteria_value)
     if (criteria_key in document) == False:
         return False
     if isinstance(document[criteria_key], str):
-        return criteria_value in document[criteria_key]
+        return string_contains(document[criteria_key], criteria_value)
     if isinstance(document[criteria_key], list):
         for item in document[criteria_key]:
             if contains_property(item, criteria_key, criteria_value):
@@ -77,7 +83,7 @@ def perform_search(criteria):
         matched_json[i]["_score"] = match_score[i]
         matched_json[i]["_id"] = matched_id[i][:36]
 
-    matched_json.sort(reverse = True, key=lambda x: int(x["_score"]))
+    matched_json.sort(reverse=True, key=lambda x: int(x["_score"]))
     return matched_json
 
 
