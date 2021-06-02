@@ -75,6 +75,9 @@ def perform_search(criteria):
         file.close()
 
         score = document_matches(data_json, criteria)
+        if score <= 0.1:
+            continue
+
         matched_id.append(file_name)
         matched_json.append(data_json)
         match_score.append(score)
