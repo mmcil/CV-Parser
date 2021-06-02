@@ -22,6 +22,7 @@ def file_upload():
     response = jsonify({'some': 'data'})
     response.headers.add('Access-Control-Allow-Origin', '*')
 
+    # print(processed_json)
     return response
 
 app.run()
