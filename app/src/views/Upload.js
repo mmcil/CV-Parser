@@ -17,7 +17,7 @@ function Upload() {
         formData.append("fileName", fileName);
         try {
             const res = await axios.post(
-                "http://localhost:3000/upload",
+                "http://localhost:5000/pdf-upload",
                 formData
             );
             console.log(res);
