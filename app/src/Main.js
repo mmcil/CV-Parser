@@ -8,6 +8,7 @@ import {
 import Home from "./views/Home";
 import Upload from "./views/Upload";
 import Search from "./views/Search";
+import Stuff from "./views/Stuff";
 
 class Main extends Component {
     render() {
@@ -19,11 +20,13 @@ class Main extends Component {
                         <li><NavLink to="/">Home</NavLink></li>
                         <li><NavLink to="/upload">Upload File</NavLink></li>
                         <li><NavLink to="/search">Search CV</NavLink></li>
+                        <li><NavLink to="/stuff">Stuff</NavLink></li>
                     </ul>
                     <div className="content">
                         <Route exact path="/" component={Home}/>
                         <Route path="/upload" component={Upload}/>
                         <Route path="/search" component={Search}/>
+                        <Route path="/stuff" component={Stuff}/>
                     </div>
                 </div>
             </HashRouter>
