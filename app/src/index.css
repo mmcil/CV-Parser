@@ -44,8 +44,9 @@ ul.header {
 }
 
 .content {
+    border-radius: 30px;
     background-color: #FFF;
-    padding: 20px;
+    padding: 40px;
     position: relative;
     left: 210px;
     width: 80%;
@@ -137,6 +138,7 @@ ul.header li a {
     margin: 0 0 10px 0 ;
     background-color: #DEE0E4; /*for compatibility with older browsers*/
     background-image: linear-gradient(gray, lightgray);
+    border-radius: 25px;
 
     /* text styles */
     text-decoration: none;
@@ -154,8 +156,10 @@ ul.header li a:after {
     width: calc(100% - 4px);
     height: 50%;
     background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+    border-radius: 25px;
 }
 
 ul.header li a:hover {
     background: linear-gradient(blue, lightblue);
+    border-radius: 25px;
 }
