@@ -62,6 +62,10 @@ const Search = () => {
         }));
     };
 
+    const searchButton = () => {
+
+    }
+
     const hasError = (field) =>
         !!(formValidate.touched[field] && formValidate.errors[field]);
 
@@ -163,11 +167,16 @@ const Search = () => {
                     />
                 </Grid>
 
+                <Grid item md={4} xs={12}>
+                    <button onClick={searchButton}>
+                        Search
+                    </button>
+                </Grid>
+
             </Grid>
+
         </div>
-
     );
-
 }
 
 export default Search;
