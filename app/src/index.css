@@ -25,7 +25,6 @@ ul {
     margin: 0;
     padding: 0;
     width: 200px;
-    background-color: #f1f1f1;
     position: fixed;
 }
 
@@ -40,15 +39,16 @@ ul.header li {
 }
 
 ul.header {
-    background-color: #FCEBF6;
+    background-color: #DEE0E4;
     padding: 0;
 }
 
 .content {
+    border-radius: 30px;
     background-color: #FFF;
-    padding: 20px;
+    padding: 40px;
     position: relative;
-    left: 200px;
+    left: 210px;
     width: 80%;
     height: 500px;
 }
@@ -135,15 +135,17 @@ ul.header li a {
     position: relative;
     display: block;
     padding: 15px 15px;
-    background-color: gray; /*for compatibility with older browsers*/
+    margin: 0 0 10px 0 ;
+    background-color: #DEE0E4; /*for compatibility with older browsers*/
     background-image: linear-gradient(gray, lightgray);
+    border-radius: 25px;
 
     /* text styles */
     text-decoration: none;
-    color: #FFE;
-    font-size: 20px;
-    font-family: sans-serif;
-    font-weight: 100;
+    color: #000;
+    font-size: 22px;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 400;
 }
 
 ul.header li a:after {
@@ -154,8 +156,10 @@ ul.header li a:after {
     width: calc(100% - 4px);
     height: 50%;
     background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+    border-radius: 25px;
 }
 
 ul.header li a:hover {
     background: linear-gradient(blue, lightblue);
+    border-radius: 25px;
 }
