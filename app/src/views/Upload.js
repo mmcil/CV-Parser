@@ -28,7 +28,7 @@ function Upload() {
 
     return (
         <div className="Upload">
-            <input type="file" onChange={saveFile}/>
+            <input className="chooseFile" type="file" onChange={saveFile}/>
             <button onClick={uploadFile}>Upload</button>
         </div>
     );
