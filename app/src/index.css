@@ -20,37 +20,68 @@ h1, h2, p, ul, li {
     font-family: sans-serif;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    position: fixed;
+div.header {
+    width: 90%;
+    margin-bottom: 30px;
 }
 
-li {
-    text-align: center;
-}
-
-ul.header li {
-    display: block;
-    list-style-type: none;
-    margin: 0;
-}
-
-ul.header {
+img.header {
+    border-radius: 25px;
     background-color: #DEE0E4;
-    padding: 0;
+    padding: 1px;
+    position: relative;
+    left: 75%;
+    width: auto;
+    height: 120px;
+}
+
+h1.header {
+    border-radius: 25px;
+    background-color: #DEE0E4;
+    width: auto;
+    left: 35%;
+    padding: 15px 45px;
+    position: absolute;
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+    display: block;
+    margin-bottom: 30px;
+    letter-spacing: -.5px;
+    font-weight: 1200;
+
+    background-image: linear-gradient(pink, lightcoral);
+    text-decoration: none;
+    color: #000;
+    font-size: 48px;
+}
+
+h1.header:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: 50%;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+    border-radius: 25px;
+}
+
+div.search_above {
+    margin-bottom: 7%;
+}
+
+input.chooseFile {
+    font-size: larger;
 }
 
 .content {
     border-radius: 30px;
     background-color: #FFF;
-    padding: 40px;
+    padding: 2%;
     position: relative;
-    left: 210px;
-    width: 80%;
-    height: 500px;
+    left: 11%;
+    width: 89%;
+    height: auto;
 }
 
 .content h2 {
@@ -82,14 +113,6 @@ ul.header {
     border: 0.5px solid rgba(130, 130, 130, 0.25);
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1),
     0 0 0 1px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    color: #130f40;
-    font-family: 'Varela Round', sans-serif;
-    letter-spacing: -.5px;
-    font-weight: 700;
-    padding-bottom: 10px;
 }
 
 .upload-container {
@@ -130,25 +153,73 @@ h1 {
     opacity: 0.55;
 }
 
-ul.header li a {
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 10%;
+    position: fixed;
+}
+
+li {
+    text-align: center;
+}
+
+ul.nav li a {
     /* background styles */
     position: relative;
     display: block;
     padding: 15px 15px;
-    margin: 0 0 10px 0 ;
+    margin: 0 0 10px 0;
     background-color: #DEE0E4; /*for compatibility with older browsers*/
-    background-image: linear-gradient(gray, lightgray);
-    border-radius: 25px;
+    background-image: linear-gradient(#0077e6, #1a90ff);
+    border-radius: 25%;
 
     /* text styles */
     text-decoration: none;
-    color: #000;
-    font-size: 22px;
+    color: #FFF;
+    font-size: medium;
     font-family: 'Varela Round', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
+    text-align: center;
 }
 
-ul.header li a:after {
+ul.nav li a:after {
+    content: '';
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: calc(100% - 7%);
+    height: 50%;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+    border-radius: 25%;
+}
+
+ul.nav li a:hover {
+    background: linear-gradient(deeppink, red);
+    border-radius: 25%;
+}
+
+button.contentButton {
+    border: none;
+    border-radius: 25px;
+    background-color: #DEE0E4;
+    width: auto;
+    color: white;
+    position: absolute;
+    padding: 15px 65px;
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+    display: flow;
+    margin-bottom: 30px;
+    align-items: flex-start;
+    font-weight: 1200;
+    background-image: linear-gradient(#009900, #00b300);
+    text-decoration: none;
+    font-size: medium;
+}
+
+button.contentButton:after {
     content: '';
     position: absolute;
     top: 2px;
@@ -159,7 +230,23 @@ ul.header li a:after {
     border-radius: 25px;
 }
 
-ul.header li a:hover {
-    background: linear-gradient(blue, lightblue);
+button.contentButton:hover {
+    background: linear-gradient(#2eb82e, #47d147);
     border-radius: 25px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
 }

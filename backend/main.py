@@ -25,7 +25,8 @@ def file_upload_endpoint():
     db_item_id = str(uuid.uuid4())
     create_dir_if_not_exists("resume")
     file.save("resume/" + db_item_id + ".pdf")
-    processed_json = ResumeParser("resume/" + db_item_id + ".pdf").get_extracted_data()
+    processed_json = ResumeParser(
+        "resume/" + db_item_id + ".pdf").get_extracted_data()
     create_dir_if_not_exists("db")
     result_json = open("db/" + db_item_id + ".json", "w")
     result_json.write(json.dumps(processed_json, indent=4))
@@ -36,6 +37,14 @@ def file_upload_endpoint():
     return response
 
 
+@app.route("/search", methods=['OPTIONS'])
+def search_endpoint_options():
+    response = jsonify("")
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', '*')
+    return response
+
+
 @app.route("/search", methods=['POST'])
 def search_endpoint():
     result = perform_search(request.json)
@@ -43,8 +52,9 @@ def search_endpoint():
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
+
 def create_dir_if_not_exists(dir_name):
-     if not path.exists(dir_name):
+    if not path.exists(dir_name):
         makedirs(dir_name)
 
 
@@ -53,12 +63,18 @@ def string_contains(big, little):
 
 
 def contains_property(document, criteria_key, criteria_value):
+    if document == None:
+        return False
     if isinstance(document, str):
-        return string_contains(document, criteria_value)
+        return criteria_value in document
     if (criteria_key in document) == False:
         return False
+    if document[criteria_key] == None:
+        return False
     if isinstance(document[criteria_key], str):
-        return string_contains(document[criteria_key], criteria_value)
+        return criteria_value in document[criteria_key]
+    if isinstance(document[criteria_key], (int, float)):
+        return document[criteria_key] > float(criteria_value)
     if isinstance(document[criteria_key], list):
         for item in document[criteria_key]:
             if contains_property(item, criteria_key, criteria_value):
@@ -82,6 +98,9 @@ def perform_search(criteria):
     matched_json = []
     matched_id = []
     match_score = []
+
+    if criteria["total_experience"] == "":
+        criteria["total_experience"] = 0
 
     for file_name in listdir("db"):
         file = open("db/" + file_name, 'r')
