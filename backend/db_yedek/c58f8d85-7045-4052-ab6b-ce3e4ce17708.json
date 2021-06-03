@@ -1,0 +1,41 @@
+{
+    "name": "Jane Fisher",
+    "email": "jane.q.fisher@gmail.com",
+    "mobile_number": "757-646-1653",
+    "skills": [
+        "Programming",
+        "Ios",
+        "Testing",
+        "Coding",
+        "Database",
+        "Ux",
+        "Css",
+        ".net",
+        "Fitness",
+        "Docker",
+        "Engineering",
+        "Communication",
+        "Agile",
+        "Sql",
+        "Fundraising",
+        "Design",
+        "Time management",
+        "Html",
+        "Cad",
+        "Ecommerce"
+    ],
+    "college_name": null,
+    "degree": null,
+    "designation": null,
+    "experience": [
+        "Experience: .NET Developer Intern",
+        "Company: BrainWild Global",
+        "Date: Nov 2017\u2013March 2019",
+        "Experience: .NET Developer",
+        "Company: Freelance",
+        "Date: June 2016\u2013Nov 2017"
+    ],
+    "company_names": null,
+    "no_of_pages": 2,
+    "total_experience": 2.75
+}

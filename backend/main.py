@@ -1,6 +1,4 @@
-from os import path, makedirs, listdir, truncate
-from types import MethodType
-from typing import Match
+from os import path, makedirs, listdir
 from flask import *
 from pyresparser import ResumeParser
 import uuid
@@ -9,14 +7,26 @@ import json
 app = Flask(__name__)
 
 
+@app.route("/pdf-view", methods=['GET'])
+def file_view_endpoint():
+    resume_id = request.args.get("resume-id")
+    pdf_file = open("resume/" + resume_id + ".pdf", "rb")
+    pdf = pdf_file.read()
+    pdf_file.close()
+    response = make_response(pdf)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add("Content-Type", "application/pdf")
+    return response
+
+
 @app.route("/pdf-upload", methods=['POST'])
 def file_upload_endpoint():
     file = request.files['file']
-    file.save("tmp.pdf")
-    processed_json = ResumeParser("tmp.pdf").get_extracted_data()
-    if not path.exists('db'):
-        makedirs('db')
     db_item_id = str(uuid.uuid4())
+    create_dir_if_not_exists("resume")
+    file.save("resume/" + db_item_id + ".pdf")
+    processed_json = ResumeParser("resume/" + db_item_id + ".pdf").get_extracted_data()
+    create_dir_if_not_exists("db")
     result_json = open("db/" + db_item_id + ".json", "w")
     result_json.write(json.dumps(processed_json, indent=4))
     result_json.close()
@@ -32,6 +42,10 @@ def search_endpoint():
     response = jsonify(result)
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
+
+def create_dir_if_not_exists(dir_name):
+     if not path.exists(dir_name):
+        makedirs(dir_name)
 
 
 def string_contains(big, little):
