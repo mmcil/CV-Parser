@@ -181,7 +181,7 @@ const Search = () => {
                     </Grid>
 
                     <Grid item md={4} xs={12}>
-                        <button onClick={searchButton}>
+                        <button className="contentButton" onClick={searchButton}>
                             Search
                         </button>
                     </Grid>
@@ -190,7 +190,7 @@ const Search = () => {
             </div>
 
             <div>
-                <table size="sm">
+                <table>
                     <thead>
                     <tr>
                         <th>#</th>

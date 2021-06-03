@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import axios, {post} from 'axios';
+import React from "react";
+import axios from 'axios';
 import {useState} from "react";
 
 function Upload() {
@@ -11,7 +11,7 @@ function Upload() {
         setFileName(e.target.files[0].name);
     };
 
-    const uploadFile = async (e) => {
+    const uploadFile = async () => {
         const formData = new FormData();
         formData.append("file", file);
         formData.append("fileName", fileName);
@@ -29,7 +29,7 @@ function Upload() {
     return (
         <div className="Upload">
             <input className="chooseFile" type="file" onChange={saveFile}/>
-            <button onClick={uploadFile}>Upload</button>
+            <button className="contentButton" onClick={uploadFile}>Upload</button>
         </div>
     );
 }
