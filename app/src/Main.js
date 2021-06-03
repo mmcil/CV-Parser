@@ -8,9 +8,10 @@ import {
 import Home from "./views/Home";
 import Upload from "./views/Upload";
 import Search from "./views/Search";
-import Stuff from "./views/Stuff";
+import About from "./views/About";
 
 import logo from './images/logo.png'
+import logo_hrai from './images/logo_hrai.png'
 
 class Main extends Component {
     render() {
@@ -18,7 +19,11 @@ class Main extends Component {
             <HashRouter>
                 <div>
                     <div className="header">
-                        <h1 className="header">Analyze CV</h1>
+                        <img className="headerLogo"
+                             id="topBarLogo"
+                             alt="Logo"
+                             src={logo_hrai}
+                        />
                         <img className="header"
                              id="topBarLogo"
                              alt="Logo"
@@ -30,13 +35,13 @@ class Main extends Component {
                         <li><NavLink to="/">Home</NavLink></li>
                         <li><NavLink to="/upload">Upload CV</NavLink></li>
                         <li><NavLink to="/search">Search CV</NavLink></li>
-                        <li><NavLink to="/stuff">Stuff</NavLink></li>
+                        <li><NavLink to="/about">About</NavLink></li>
                     </ul>
                     <div className="content">
                         <Route exact path="/" component={Home}/>
                         <Route path="/upload" component={Upload}/>
                         <Route path="/search" component={Search}/>
-                        <Route path="/stuff" component={Stuff}/>
+                        <Route path="/about" component={About}/>
                     </div>
                 </div>
             </HashRouter>

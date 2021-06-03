@@ -30,7 +30,17 @@ img.header {
     background-color: #DEE0E4;
     padding: 1px;
     position: relative;
-    left: 75%;
+    left: 85%;
+    width: auto;
+    height: 120px;
+}
+
+img.headerLogo {
+    border-radius: 25px;
+    background-color: #DEE0E4;
+    padding: 1px;
+    position: relative;
+    left: 4%;
     width: auto;
     height: 120px;
 }
@@ -207,7 +217,7 @@ button.contentButton {
     width: auto;
     color: white;
     position: absolute;
-    padding: 15px 65px;
+    padding: 10px 45px;
     text-align: center;
     font-family: 'Varela Round', sans-serif;
     display: flow;

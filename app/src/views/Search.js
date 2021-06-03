@@ -8,7 +8,6 @@ const initialValues = {
     name: '',
     email: '',
     mobile_number: '',
-    college_name: '',
     degree: '',
     skills: '',
     company_names: '',
@@ -51,7 +50,6 @@ const Search = () => {
             email: formState.email,
             mobile_number: formState.mobile_number,
             skills: formState.skills,
-            college_name: formState.college_name,
             degree: formState.degree,
             experience: formState.experience,
             company_names: formState.company_names,
@@ -117,11 +115,11 @@ const Search = () => {
                     <Grid item md={6} xs={12}>
                         <TextField
                             fullWidth
-                            label={'College'}
-                            onChange={handleFieldChange('college_name')}
-                            value={formState.college_name}
+                            label={'Skills'}
+                            onChange={handleFieldChange('skills')}
+                            value={formState.skills}
                             variant={'outlined'}
-                            error={hasError('college_name')}
+                            error={hasError('skills')}
                         />
                     </Grid>
 
@@ -169,17 +167,6 @@ const Search = () => {
                         />
                     </Grid>
 
-                    <Grid item md={12} xs={12}>
-                        <TextField
-                            fullWidth
-                            label={'Skills'}
-                            onChange={handleFieldChange('skills')}
-                            value={formState.skills}
-                            variant={'outlined'}
-                            error={hasError('skills')}
-                        />
-                    </Grid>
-
                     <Grid item md={4} xs={12}>
                         <button className="contentButton" onClick={searchButton}>
                             Search
@@ -198,7 +185,6 @@ const Search = () => {
                         <th>Email</th>
                         <th>Mobile Number</th>
                         <th>Skills</th>
-                        <th>College Name</th>
                         <th>Degree</th>
                         <th>Experience</th>
                         <th>Total Experience</th>
@@ -214,7 +200,6 @@ const Search = () => {
                                     <td>{v.email}</td>
                                     <td>{v.mobile_number}</td>
                                     <td>{v.skills.join(", ")}</td>
-                                    <td>{v.college_name}</td>
                                     <td>{v.degree}</td>
                                     <td>{v.experience}</td>
                                     <td>{v.total_experience}</td>
