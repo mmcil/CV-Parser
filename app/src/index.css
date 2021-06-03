@@ -20,18 +20,6 @@ h1, h2, p, ul, li {
     font-family: sans-serif;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    position: fixed;
-}
-
-li {
-    text-align: center;
-}
-
 div.header {
     width: 90%;
     margin-bottom: 30px;
@@ -82,13 +70,17 @@ div.search_above {
     margin-bottom: 50px;
 }
 
+input.chooseFile {
+    font-size: larger;
+}
+
 .content {
     border-radius: 30px;
     background-color: #FFF;
-    padding: 5%;
+    padding: 2%;
     position: relative;
-    left: 210px;
-    width: 80%;
+    left: 11%;
+    width: 89%;
     height: auto;
 }
 
@@ -161,6 +153,18 @@ div.search_above {
     opacity: 0.55;
 }
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 10%;
+    position: fixed;
+}
+
+li {
+    text-align: center;
+}
+
 ul.nav li a {
     /* background styles */
     position: relative;
@@ -169,30 +173,31 @@ ul.nav li a {
     margin: 0 0 10px 0;
     background-color: #DEE0E4; /*for compatibility with older browsers*/
     background-image: linear-gradient(gray, lightgray);
-    border-radius: 25px;
+    border-radius: 25%;
 
     /* text styles */
     text-decoration: none;
     color: #000;
-    font-size: 22px;
+    font-size: medium;
     font-family: 'Varela Round', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
+    text-align: center;
 }
 
 ul.nav li a:after {
     content: '';
     position: absolute;
-    top: 2px;
-    left: 2px;
-    width: calc(100% - 4px);
+    top: 5%;
+    left: 5%;
+    width: calc(100% - 7%);
     height: 50%;
     background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
-    border-radius: 25px;
+    border-radius: 25%;
 }
 
 ul.nav li a:hover {
     background: linear-gradient(blue, lightblue);
-    border-radius: 25px;
+    border-radius: 25%;
 }
 
 button {
