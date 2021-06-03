@@ -21,6 +21,7 @@ import {
     TextField,
     Typography,
 } from '@material-ui/core';
+import axios from "axios";
 
 const initialValues = {
     id: '',
@@ -68,6 +69,24 @@ const Search = () => {
 
     const hasError = (field) =>
         !!(formValidate.touched[field] && formValidate.errors[field]);
+
+    const searchRequest = async () => {
+        const userData = {
+            skills: 'Docker',
+        };
+
+        let axiosConfig = {
+            headers: {
+                "Content-type": "application/json"
+            }
+        };
+
+        await axios.post("http://localhost:5000/search", userData, axiosConfig)
+            .then(res => {
+                const responseData = res.data;
+                console.log(responseData);
+            });
+    }
 
     return (
         <div>
