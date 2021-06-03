@@ -76,6 +76,9 @@ def perform_search(criteria):
     matched_id = []
     match_score = []
 
+    if criteria["total_experience"] == "":
+        criteria["total_experience"] = 0
+
     for file_name in listdir("db"):
         file = open("db/" + file_name, 'r')
         data_json = json.loads(file.read())
