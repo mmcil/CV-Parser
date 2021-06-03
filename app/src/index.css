@@ -34,6 +34,7 @@ li {
 
 div.header {
     width: 90%;
+    margin-bottom: 30px;
 }
 
 img.header {
@@ -42,36 +43,49 @@ img.header {
     padding: 1px;
     position: relative;
     left: 75%;
-    width: 400px;
+    width: auto;
     height: 120px;
-    margin-bottom: 30px;
 }
 
 h1.header {
     border-radius: 25px;
     background-color: #DEE0E4;
-    width: 280px;
-    left: 40%;
-    padding: 10px;
+    width: auto;
+    left: 35%;
+    padding: 15px 45px;
     position: absolute;
     text-align: center;
-    color: #130f40;
     font-family: 'Varela Round', sans-serif;
-    float: right;
-    display:flex;
+    display: block;
     margin-bottom: 30px;
     letter-spacing: -.5px;
     font-weight: 1200;
+
+    background-image: linear-gradient(pink, lightcoral);
+    text-decoration: none;
+    color: #000;
+    font-size: 48px;
+}
+
+h1.header:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: 50%;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+    border-radius: 25px;
 }
 
 .content {
     border-radius: 30px;
     background-color: #FFF;
-    padding: 40px;
+    padding: 5%;
     position: relative;
     left: 210px;
     width: 80%;
-    height: 2100px;
+    height: auto;
 }
 
 .content h2 {
