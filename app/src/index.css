@@ -41,7 +41,7 @@ img.header {
     background-color: #DEE0E4;
     padding: 1px;
     position: relative;
-    left: 1380px;
+    left: 75%;
     width: 400px;
     height: 120px;
     margin-bottom: 30px;
@@ -51,9 +51,9 @@ h1.header {
     border-radius: 25px;
     background-color: #DEE0E4;
     width: 280px;
-    right: 700px;
+    left: 40%;
     padding: 10px;
-    position: relative;
+    position: absolute;
     text-align: center;
     color: #130f40;
     font-family: 'Varela Round', sans-serif;
