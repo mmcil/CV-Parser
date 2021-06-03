@@ -40,12 +40,18 @@ def search_endpoint():
     return response
 
 def contains_property(document, criteria_key, criteria_value):
+    if document == None:
+        return False
     if isinstance(document, str):
         return criteria_value in document
     if (criteria_key in document) == False:
         return False
+    if document[criteria_key] == None:
+        return False
     if isinstance(document[criteria_key], str):
         return criteria_value in document[criteria_key]
+    if isinstance(document[criteria_key], (int, float)):
+        return document[criteria_key] > float(criteria_value)
     if isinstance(document[criteria_key], list):
         for item in document[criteria_key]:
             if contains_property(item, criteria_key, criteria_value):
