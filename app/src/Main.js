@@ -10,13 +10,23 @@ import Upload from "./views/Upload";
 import Search from "./views/Search";
 import Stuff from "./views/Stuff";
 
+import logo from './images/logo.png'
+
 class Main extends Component {
     render() {
         return (
             <HashRouter>
                 <div>
-                    <h1>Analyze CV</h1>
-                    <ul className="header">
+                    <div className="header">
+                        <h1 className="header">Analyze CV</h1>
+                        <img className="header"
+                             id="topBarLogo"
+                             alt="Logo"
+                             src={logo}
+                        />
+                    </div>
+
+                    <ul className="nav">
                         <li><NavLink to="/">Home</NavLink></li>
                         <li><NavLink to="/upload">Upload File</NavLink></li>
                         <li><NavLink to="/search">Search CV</NavLink></li>
