@@ -50,7 +50,7 @@ ul.header {
     position: relative;
     left: 210px;
     width: 80%;
-    height: 500px;
+    height: 2100px;
 }
 
 .content h2 {
@@ -135,7 +135,7 @@ ul.header li a {
     position: relative;
     display: block;
     padding: 15px 15px;
-    margin: 0 0 10px 0 ;
+    margin: 0 0 10px 0;
     background-color: #DEE0E4; /*for compatibility with older browsers*/
     background-image: linear-gradient(gray, lightgray);
     border-radius: 25px;
@@ -175,4 +175,20 @@ button {
     display: flow;
     font-size: 16px;
     align-items: flex-start;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
 }
