@@ -78,8 +78,8 @@ const Search = () => {
 
     return (
         <div>
-            <div>
-                <Grid className={'right'} container spacing={2}>
+            <div className={'search_above'}>
+                <Grid  container spacing={2}>
 
                     <Grid item md={6} xs={12}>
                         <TextField
@@ -188,9 +188,6 @@ const Search = () => {
 
                 </Grid>
             </div>
-
-            <br/>
-            <br/>
 
             <div>
                 <table size="sm">

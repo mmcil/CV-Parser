@@ -78,6 +78,10 @@ h1.header:after {
     border-radius: 25px;
 }
 
+div.search_above {
+    margin-bottom: 50px;
+}
+
 .content {
     border-radius: 30px;
     background-color: #FFF;
