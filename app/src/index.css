@@ -32,15 +32,36 @@ li {
     text-align: center;
 }
 
-ul.header li {
-    display: block;
-    list-style-type: none;
-    margin: 0;
+div.header {
+    width: 90%;
 }
 
-ul.header {
+img.header {
+    border-radius: 25px;
     background-color: #DEE0E4;
-    padding: 0;
+    padding: 1px;
+    position: relative;
+    left: 1380px;
+    width: 400px;
+    height: 120px;
+    margin-bottom: 30px;
+}
+
+h1.header {
+    border-radius: 25px;
+    background-color: #DEE0E4;
+    width: 280px;
+    right: 700px;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    color: #130f40;
+    font-family: 'Varela Round', sans-serif;
+    float: right;
+    display:flex;
+    margin-bottom: 30px;
+    letter-spacing: -.5px;
+    font-weight: 1200;
 }
 
 .content {
@@ -84,14 +105,6 @@ ul.header {
     0 0 0 1px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    color: #130f40;
-    font-family: 'Varela Round', sans-serif;
-    letter-spacing: -.5px;
-    font-weight: 700;
-    padding-bottom: 10px;
-}
-
 .upload-container {
     background-color: rgb(239, 239, 239);
     border-radius: 6px;
@@ -130,7 +143,7 @@ h1 {
     opacity: 0.55;
 }
 
-ul.header li a {
+ul.nav li a {
     /* background styles */
     position: relative;
     display: block;
@@ -148,7 +161,7 @@ ul.header li a {
     font-weight: 400;
 }
 
-ul.header li a:after {
+ul.nav li a:after {
     content: '';
     position: absolute;
     top: 2px;
@@ -159,7 +172,7 @@ ul.header li a:after {
     border-radius: 25px;
 }
 
-ul.header li a:hover {
+ul.nav li a:hover {
     background: linear-gradient(blue, lightblue);
     border-radius: 25px;
 }
