@@ -13,6 +13,7 @@ const initialValues = {
     company_names: '',
     experience: '',
     total_experience: '',
+    _score: ''
 };
 
 const initialFormValidate = {
@@ -180,7 +181,7 @@ const Search = () => {
                 <table>
                     <thead>
                     <tr>
-                        <th>#</th>
+                        <th>%</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Mobile Number</th>
@@ -195,7 +196,7 @@ const Search = () => {
                         responseData.map((v, i, a) => {
                             return (
                                 <tr key={v._id}>
-                                    <td><a href={"http://localhost:5000/pdf-view?resume-id=" + v._id}>[PDF]</a></td>
+                                    <td><a href={"http://localhost:5000/pdf-view?resume-id=" + v._id}>{v._score}%</a></td>
                                     <td>{v.name}</td>
                                     <td>{v.email}</td>
                                     <td>{v.mobile_number}</td>
