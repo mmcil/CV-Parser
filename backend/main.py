@@ -10,13 +10,7 @@ app = Flask(__name__)
 @app.route("/pdf-view", methods=['GET'])
 def file_view_endpoint():
     resume_id = request.args.get("resume-id")
-    pdf_file = open("resume/" + resume_id + ".pdf", "rb")
-    pdf = pdf_file.read()
-    pdf_file.close()
-    response = make_response(pdf)
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    response.headers.add("Content-Type", "application/pdf")
-    return response
+    return send_from_directory("resume/", resume_id + ".pdf")
 
 
 @app.route("/pdf-upload", methods=['POST'])
