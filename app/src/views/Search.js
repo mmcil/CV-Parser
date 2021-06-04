@@ -195,7 +195,7 @@ const Search = () => {
                         responseData.map((v, i, a) => {
                             return (
                                 <tr key={v._id}>
-                                    <td></td>
+                                    <td><a href={"http://localhost:5000/pdf-view?resume-id=" + v._id}>[PDF]</a></td>
                                     <td>{v.name}</td>
                                     <td>{v.email}</td>
                                     <td>{v.mobile_number}</td>

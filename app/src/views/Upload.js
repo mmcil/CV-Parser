@@ -20,6 +20,7 @@ function Upload() {
                 "http://localhost:5000/pdf-upload",
                 formData
             );
+            alert("Resume has uploaded successfully!")
             console.log(res);
         } catch (ex) {
             console.log(ex);

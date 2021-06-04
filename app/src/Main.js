@@ -33,8 +33,8 @@ class Main extends Component {
 
                     <ul className="nav">
                         <li><NavLink to="/">Home</NavLink></li>
-                        <li><NavLink to="/upload">Upload CV</NavLink></li>
-                        <li><NavLink to="/search">Search CV</NavLink></li>
+                        <li><NavLink to="/upload">Upload Resume</NavLink></li>
+                        <li><NavLink to="/search">Search Resume</NavLink></li>
                         <li><NavLink to="/about">About</NavLink></li>
                     </ul>
                     <div className="content">
